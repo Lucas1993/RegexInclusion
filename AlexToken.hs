@@ -199,21 +199,22 @@ alexGetByte (_,[],(c:s)) = case utf8Encode c of
 -- For compatibility with previous versions of Alex, and because we can.
 
 alex_base :: Array Int Int
-alex_base = listArray (0,8) [-8,-3,4,0,0,0,0,0,0]
+alex_base = listArray (0,9) [-8,-3,4,0,0,0,0,0,0,0]
 
 alex_table :: Array Int Int
-alex_table = listArray (0,259) [0,2,1,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,0,0,0,0,0,0,2,0,0,0,0,2,0,0,4,5,7,8,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0,0,0,0,0,0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+alex_table = listArray (0,259) [0,2,1,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,0,0,0,0,0,0,2,0,0,0,0,2,0,0,5,6,8,9,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,0,0,0,0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 alex_check :: Array Int Int
 alex_check = listArray (0,259) [-1,9,10,11,12,13,9,10,11,12,13,-1,-1,9,10,11,12,13,-1,-1,-1,-1,-1,-1,32,-1,-1,-1,-1,32,-1,-1,40,41,42,43,32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,60,-1,-1,-1,-1,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,-1,-1,-1,-1,-1,-1,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
 
 alex_deflt :: Array Int Int
-alex_deflt = listArray (0,8) [-1,-1,-1,-1,-1,-1,-1,-1,-1]
+alex_deflt = listArray (0,9) [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
 
-alex_accept = listArray (0::Int,8) [AlexAccNone,AlexAccSkip,AlexAccSkip,AlexAcc (alex_action_2),AlexAcc (alex_action_3),AlexAcc (alex_action_4),AlexAcc (alex_action_5),AlexAcc (alex_action_6),AlexAcc (alex_action_7)]
-{-# LINE 22 "AlexToken.x" #-}
+alex_accept = listArray (0::Int,9) [AlexAccNone,AlexAccSkip,AlexAccSkip,AlexAcc (alex_action_2),AlexAcc (alex_action_3),AlexAcc (alex_action_4),AlexAcc (alex_action_5),AlexAcc (alex_action_6),AlexAcc (alex_action_7),AlexAcc (alex_action_8)]
+{-# LINE 24 "AlexToken.x" #-}
 
-data Token = TokenChar Char
+data Token = TokenConst Char
+             | TokenVar Char
              | TokenLParen
              | TokenRParen
              | TokenLess 
@@ -224,12 +225,13 @@ data Token = TokenChar Char
 scanTokens = alexScanTokens
 
 
-alex_action_2 =  \s -> TokenChar (head s) 
-alex_action_3 =  \s -> TokenLParen 
-alex_action_4 =  \s -> TokenRParen 
-alex_action_5 =  \s -> TokenLess 
-alex_action_6 =  \s -> TokenStar 
-alex_action_7 =  \s -> TokenPlus 
+alex_action_2 =  \s -> TokenConst (head s) 
+alex_action_3 =  \s -> TokenVar (head s) 
+alex_action_4 =  \s -> TokenLParen 
+alex_action_5 =  \s -> TokenRParen 
+alex_action_6 =  \s -> TokenLess 
+alex_action_7 =  \s -> TokenStar 
+alex_action_8 =  \s -> TokenPlus 
 {-# LINE 1 "templates/GenericTemplate.hs" #-}
 {-# LINE 1 "templates/GenericTemplate.hs" #-}
 {-# LINE 1 "<built-in>" #-}

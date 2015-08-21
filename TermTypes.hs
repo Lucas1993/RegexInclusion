@@ -3,7 +3,7 @@ module TermTypes where
 data Reg = R0 Reg0 | R1 Reg1 deriving (Show, Eq, Ord)
 
 -- Regex w/o epsilon
-data Reg0 = Empty | Elem Char | Concat0L Reg0 Reg | Concat0R Reg Reg0 | Opt0 Reg0 Reg0  deriving (Show, Eq, Ord)
+data Reg0 = Empty | Elem Char | Concat0L Reg0 Reg | Concat0R Reg Reg0 | Opt0 Reg0 Reg0  | Var Char deriving (Show, Eq, Ord)
 
 -- Regex with epsilon
 data Reg1 = Eps | Star Reg | Concat1 Reg1 Reg1 | Opt1L Reg1 Reg | Opt1R Reg Reg1  deriving (Show, Eq, Ord)

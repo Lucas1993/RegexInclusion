@@ -10,7 +10,7 @@ import TermTypes
 %error { parseError }
 
 %token
-	TIPO		{ TokenChar $$ }
+	TIPO		{ TokenConst $$ }
 	'(' 		{ TokenLParen }
 	')' 		{ TokenRParen }
 	'<' 		{ TokenLess } 

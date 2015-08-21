@@ -169,7 +169,7 @@ happyReduction_7 _
 happyReduction_7 _ _  = notHappyAtAll 
 
 happyReduce_8 = happySpecReduce_1  7 happyReduction_8
-happyReduction_8 (HappyTerminal (TokenChar happy_var_1))
+happyReduction_8 (HappyTerminal (TokenConst happy_var_1))
 	 =  HappyAbsSyn7
 		 (buildElem happy_var_1
 	)
@@ -181,7 +181,7 @@ happyNewToken action sts stk [] =
 happyNewToken action sts stk (tk:tks) =
 	let cont i = action i i tk (HappyState action) sts stk tks in
 	case tk of {
-	TokenChar happy_dollar_dollar -> cont 8;
+	TokenConst happy_dollar_dollar -> cont 8;
 	TokenLParen -> cont 9;
 	TokenRParen -> cont 10;
 	TokenLess -> cont 11;

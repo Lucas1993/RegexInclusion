@@ -5,14 +5,16 @@ module AlexToken (Token(..),scanTokens) where
 %wrapper "basic"
 
 $digit = 0-9
-$alpha = [a-zA-Z]
+$alphaLow = [a-z]
+$alphaUpper = [A-Z]
 $eol   = [\n]
 
 tokens :-
 
 	$eol		;
 	$white+		;
-	$alpha		{ \s -> TokenChar (head s) }
+	$alphaLow	{ \s -> TokenConst (head s) }
+	$alphaUpper	{ \s -> TokenVar (head s) }
 	\(			{ \s -> TokenLParen }
 	\)			{ \s -> TokenRParen }
 	\<			{ \s -> TokenLess }
@@ -20,7 +22,8 @@ tokens :-
 	\+			{ \s -> TokenPlus }
 
 {
-data Token = TokenChar Char
+data Token = TokenConst Char
+             | TokenVar Char
              | TokenLParen
              | TokenRParen
              | TokenLess 
